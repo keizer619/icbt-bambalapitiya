@@ -14,6 +14,8 @@ public class Person {
     private String lastName;
 
     public Person() {
+        this.firstName = "";
+        this.lastName = "";
     }
 
     public Person(String firstName, String lastName) {
@@ -36,4 +38,8 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    } 
 }

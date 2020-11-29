@@ -10,18 +10,27 @@ package com.mycompany.myproject;
  * @author Niran
  */
 public class Student extends Person{
-    private int id;
+    private String id;
 
-    public Student(String firstName,String lastName,int id) {
+    public Student() {
+        this.id = ""; 
+    }
+    
+    public Student(String id, String firstName, String lastName) {
         super(firstName,lastName);
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
-    }   
+    }
+
+    @Override
+    public String getFullName() {
+        return "-----" + getFirstName() + " " + getLastName();
+    } 
 }
