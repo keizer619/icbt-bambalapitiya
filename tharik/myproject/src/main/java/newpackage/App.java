@@ -11,12 +11,7 @@ package newpackage;
  */
 public class App {
     public static void main(String[] args) {
-        
-        
-        
         Student st = new Student("ST01", "John", "Smith");
-                
-        //st.setFirstName("John");
         System.out.println(st.getFullName());
     }
 }
