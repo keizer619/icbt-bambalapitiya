@@ -9,9 +9,9 @@ public class App {
 
     public static void main(String[] args) {
         Student student = new Student("ST01", "Sadeesha", "Eranga");
-        System.out.println(student);
+        System.out.println("student = " + student);
 
         Employee employee = new Employee("EMP01", "Sadeesha", "Eranga");
-        System.out.println(employee);
+        System.out.println("employee = " + employee);
     }
 }
