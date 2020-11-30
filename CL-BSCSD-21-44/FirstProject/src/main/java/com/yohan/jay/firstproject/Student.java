@@ -9,29 +9,30 @@ package com.yohan.jay.firstproject;
  *
  * @author YohanJayasinghe
  */
-public class Student {
+public class Student extends Person{
     
-    private String firstName;
-    private String lastName;
+    private String id;
     
-    public String getFirstName(){
-        return this.firstName;
+    public Student(){
+        this.id = "";
+    }
+
+    public Student(String id, String firstName, String lastName) {
+        super(firstName, lastName);
+        this.id = id;
     }
     
-    public void setFirstName(String firstName){
-        this.firstName = firstName;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
-    public String getLastName(){
-        return this.lastName;
+    @Override
+    public String getFullName(){
+        return "Override test " + getFirstName() + " " + getLastName();
     }
-    
-    public void setLastName(String lastName){
-        this.lastName = lastName;
-    }
-    
-    //public static final String STUDENT_CODE = "ST";
-    
-    //public String firstName;
-    //public String lastName;
+      
 }
