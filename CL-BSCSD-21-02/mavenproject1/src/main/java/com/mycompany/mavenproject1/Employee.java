@@ -5,49 +5,29 @@
  */
 package com.mycompany.mavenproject1;
 
-public class Employee extends Person {
-    private String empCode;
+public class Employee extends Person 
+{
+    private String epfNo;
+    
+    public Employee() {
+        this.epfNo = "";
+    }
 
-    public Employee(String firstName, String lastName, String empCode) {
+    public Employee(String epfNo,String firstName, String lastName) {
         super(firstName, lastName);
-        this.empCode = empCode;
+        this.epfNo = epfNo;
     }
 
-    public String getEmpCode() {
-        return empCode;
+    public String getEpfNo() {
+        return epfNo;
     }
 
-    public void setEmpCode(String empCode) {
-        this.empCode = empCode;
+    public void setEpfNo(String epfNo) {
+        this.epfNo = epfNo;
     }
-
-    @Override
-    public String getFirstName() {
-        return super.getFirstName();
-    }
-
-    @Override
-    public String getFirstName(String a) {
-        return super.getFirstName(a);
-    }
-
-    @Override
-    public void setFirstName(String firstName) {
-        super.setFirstName(firstName);
-    }
-
-    @Override
-    public String getLastName() {
-        return super.getLastName();
-    }
-
-    @Override
-    public void setLastName(String lastName) {
-        super.setLastName(lastName);
-    }
-
+    
     @Override
     public String getFullName() {
-        return super.getFullName();
-    }
+        return "EMP.." + getFirstName() + " " + getLastName();
+    } 
 }

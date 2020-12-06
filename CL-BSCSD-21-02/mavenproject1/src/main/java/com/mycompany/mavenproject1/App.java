@@ -12,10 +12,17 @@ public class App
     public App() {
     }
     
-    public static void main(String args[])
-    {
-        Student st = new Student("ST001","FIRST","LAST");
-        System.out.println(st.getFullName());
+    public static void main(String[] args) {
+        
+        Person [] prsns = new Person[4];
+
+        prsns[0] = new Student("ST01", "sFName1", "sLName1"); 
+        prsns[1] = new Student("ST02", "sFName2", "sLName2");
+        prsns[2] = new Employee("EMP01", "eFName1", "eLName1");
+        prsns[3] = new Employee("EMP02", "eFName2", "eLName2");
+        
+        for (int i = 0; i < prsns.length; i++) {
+            System.out.println(prsns[i].getFullName());
+        }
     }
-    
 }
