@@ -22,5 +22,9 @@ public class App {
         for (int i = 0; i < persons.length; i++) {
             System.out.println(persons[i].getFullName());
         }
+        
+        Person p2 = new Employee();
+        Person p3 = new Student();
+        
     }
 }
