@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myproject;
+package com.mycompany.mavenproject1;
 
 /**
  *
- * @author Niran
+ * @author Asus
  */
 public class Person {
-    private String firstName;
+  private String firstName;
     private String lastName;
 
     public Person() {
@@ -22,8 +22,12 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    
+
     public String getFirstName() {
+        return firstName;
+    }
+
+    public String getFirstName(String a) {        
         return firstName;
     }
 
@@ -38,8 +42,10 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+
     public String getFullName() {
         return this.firstName + " " + this.lastName;
-    } 
+    }  
 }
+  
+

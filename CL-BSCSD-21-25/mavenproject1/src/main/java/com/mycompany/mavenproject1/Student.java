@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.yohan.jay.firstproject;
+package com.mycompany.mavenproject1;
 
 /**
  *
- * @author YohanJayasinghe
+ * @author Asus
  */
-public class Student extends Person{
-    
+public class Student extends Person {
     private String id;
-    
-    public Student(){
+
+    public Student() {
         this.id = "";
     }
 
@@ -21,7 +20,7 @@ public class Student extends Person{
         super(firstName, lastName);
         this.id = id;
     }
-    
+
     public String getId() {
         return id;
     }
@@ -29,10 +28,9 @@ public class Student extends Person{
     public void setId(String id) {
         this.id = id;
     }
-    
+
     @Override
-    public String getFullName(){
-        return "Override test " + getFirstName() + " " + getLastName();
-    }
-      
+    public String getFullName() {
+        return "-----" + getFirstName() + " " + getLastName();
+    } 
 }

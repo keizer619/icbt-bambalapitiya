@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myproject;
+package newpackage;
 
 /**
  *
- * @author Niran
+ * @author Sankalpa
  */
 public class Person {
     private String firstName;
     private String lastName;
-
+    
     public Person() {
         this.firstName = "";
         this.lastName = "";
@@ -22,8 +22,12 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    
+
     public String getFirstName() {
+        return firstName;
+    }
+    
+    public String getFirstName(String a) {        
         return firstName;
     }
 
@@ -41,5 +45,5 @@ public class Person {
     
     public String getFullName() {
         return this.firstName + " " + this.lastName;
-    } 
+    }  
 }
