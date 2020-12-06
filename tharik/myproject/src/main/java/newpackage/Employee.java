@@ -10,6 +10,7 @@ package newpackage;
  * @author tharik
  */
 public class Employee extends Person{
+        
     private String epfNo;
 
     public Employee() {
