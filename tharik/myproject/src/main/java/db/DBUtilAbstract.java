@@ -9,6 +9,16 @@ package db;
  *
  * @author tharik
  */
-public class DBUtilAbstract {
+public abstract class DBUtilAbstract {
+    public void connect() {
+       //ssssssssss 
+    }
     
+    public abstract void getStudents();
+    
+    public abstract void addStudents();
+    
+    public abstract void updateStudents();
+    
+    public abstract void deleteStudents();
 }
