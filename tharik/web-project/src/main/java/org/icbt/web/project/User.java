@@ -22,7 +22,7 @@ public class User {
         this.username = "";
         this.firstName = "";
         this.lastName = "";
-        this.lastName = "";
+        this.password = "";
     }
 
     public User(String username, String firstName, String lastName, String password) {
