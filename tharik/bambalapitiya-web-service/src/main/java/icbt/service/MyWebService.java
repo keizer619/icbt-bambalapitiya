@@ -21,6 +21,12 @@ public class MyWebService {
      */
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
-        return "Hi " + txt + " !";
+        return "Hello " + txt + " !!!!!!";
+    }
+    
+    @WebMethod(operationName = "getStudent")
+    public Student getStudent(@WebParam(name = "id") String id) {
+        Student st = new Student("01", "John Smith", "123V");
+        return st;
     }
 }
