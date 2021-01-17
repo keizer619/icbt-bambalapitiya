@@ -4,6 +4,7 @@
     Author     : tharik
 --%>
 
+<%@page import="icbt.service.Student"%>
 <%@page import="icbt.service.MyWebService"%>
 <%@page import="icbt.service.MyWebService_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,10 +20,9 @@
             MyWebService_Service client = new MyWebService_Service();
             MyWebService proxy = client.getMyWebServicePort();
             
-            
-            String txt = proxy.hello("John");
-            
-            out.print(txt);
+            Student st = proxy.getStudent("01");
+            out.print("<p>" + st.getName() + "</p>");
+            out.print("<p>" + st.getNic() + "</p>");
             
         %>
     </body>
