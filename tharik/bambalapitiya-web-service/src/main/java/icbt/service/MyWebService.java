@@ -63,17 +63,13 @@ public class MyWebService {
     
     @WebMethod(operationName = "getUser")
     public User getUser(@WebParam(name = "username") String username) {
-        //This should be loaded from a DB
-        User st = new User("admin", "John", "Smith", "admin222");
+        User st = DBUtil.getUser(username);
         return st;
     }
     
     @WebMethod(operationName = "getUsers")
     public List<User> getUsers() {
-        //This should be loaded from a DB
-        User st = new User("admin", "John", "Smith", "admin222");
-        List<User> users = new ArrayList<>();
-        users.add(st);
+        List<User> users = DBUtil.getUsers();
         return users;
     }
     

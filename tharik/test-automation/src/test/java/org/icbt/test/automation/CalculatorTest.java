@@ -129,8 +129,8 @@ public class CalculatorTest {
     
     @Test
     public void testProcess2() {
-        int no = -43;
-        int expResult = -53;
+        int no = 50;
+        int expResult = 50;
         int result = Calculator.process(no);
         
         assertEquals(expResult, result);

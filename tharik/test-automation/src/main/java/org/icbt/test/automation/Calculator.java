@@ -34,7 +34,7 @@ public class Calculator {
     
     
     public static void process() {
-        String [] values = {"Hi", "Hello", "Bonjur"};    
+        String [] values = {"Hi", "Hello", "Bonjour"};    
          String name  = values[10];
     }
     
@@ -42,6 +42,8 @@ public class Calculator {
         int a = no;
         if (no == 50) {
             System.out.println("Fifty");
+        } else {
+             System.out.println("Not Fifty");
         }
         System.out.println(no);
         return a - 10;
