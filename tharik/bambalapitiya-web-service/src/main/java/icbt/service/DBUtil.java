@@ -101,4 +101,100 @@ public class DBUtil {
        }
        return user;
    }
+    
+    public static boolean addUser(User user) {
+       Connection conn = null;
+       Statement stmt = null;
+       try{
+          Class.forName("com.mysql.jdbc.Driver");
+          conn = DriverManager.getConnection(DB_URL, USER, PASS);
+          stmt = conn.createStatement();
+          String sql = "INSERT INTO users "
+                  + "(`username`, `first_name`, `last_name`, `password`) "
+                  + "VALUES ('" + user.getUsername() + "', '"+ user.getFirstName()+"', '"+ user.getLastName()+"', '"+ user.getPassword()+"')";
+          stmt.executeUpdate(sql);
+          return true;
+       }catch(SQLException se){
+          se.printStackTrace();
+       }catch(Exception e){
+          e.printStackTrace();
+       }finally{
+          try{
+             if(stmt!=null)
+                conn.close();
+          }catch(SQLException se){
+          }
+          try{
+             if(conn!=null)
+                conn.close();
+          }catch(SQLException se){
+             se.printStackTrace();
+          }
+       }
+       return false;
+    }
+    
+    public static boolean updateUser(User user) {
+       Connection conn = null;
+       Statement stmt = null;
+       try{
+          Class.forName("com.mysql.jdbc.Driver");
+          conn = DriverManager.getConnection(DB_URL, USER, PASS);
+          stmt = conn.createStatement();
+          String sql = "UPDATE `users` "
+                  + "SET `first_name` = '" + user.getFirstName() + "', "
+                  + "`last_name` = '" + user.getLastName()+ "',"
+                  + "`password` = '" + user.getPassword()+ "'"
+                  + " WHERE (`username` = '" + user.getUsername() +"')";
+          stmt.executeUpdate(sql);
+          return true;
+       }catch(SQLException se){
+          se.printStackTrace();
+       }catch(Exception e){
+          e.printStackTrace();
+       }finally{
+          try{
+             if(stmt!=null)
+                conn.close();
+          }catch(SQLException se){
+          }
+          try{
+             if(conn!=null)
+                conn.close();
+          }catch(SQLException se){
+             se.printStackTrace();
+          }
+       }
+       return false;
+    }
+    
+    public static boolean deleteUser(String username) {
+        Connection conn = null;
+               Statement stmt = null;
+               try{
+                  Class.forName("com.mysql.jdbc.Driver");
+                  conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                  stmt = conn.createStatement();
+                  String sql = "DELETE FROM `users` WHERE (`username` = '" + username + "')";
+                  stmt.executeUpdate(sql);
+                  return true;
+               }catch(SQLException se){
+                  se.printStackTrace();
+               }catch(Exception e){
+                  e.printStackTrace();
+               }finally{
+                  try{
+                     if(stmt!=null)
+                        conn.close();
+                  }catch(SQLException se){
+                  }
+                  try{
+                     if(conn!=null)
+                        conn.close();
+                  }catch(SQLException se){
+                     se.printStackTrace();
+                  }
+               }
+               return false;
+    }
 }
