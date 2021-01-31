@@ -68,4 +68,51 @@ public class DBUtilTest {
         assertEquals(expResult.getPassword(), result.getPassword());
     }
     
+    @Test
+    public void testAddUser() {
+        System.out.println("addUser");
+        
+        
+        //Add new user
+        User user = new User("user1", "George", "Whey", "qwe");
+       
+        boolean expectedResult = true;
+        boolean result = DBUtil.addUser(user);
+        
+        assertEquals(expectedResult, result);
+        
+        
+        //Check newly added users attributes
+        User resultUser = DBUtil.getUser(user.getUsername());
+
+        assertEquals(user.getUsername(), resultUser.getUsername());
+        assertEquals(user.getFirstName(), resultUser.getFirstName());
+        assertEquals(user.getLastName(), resultUser.getLastName());
+        assertEquals(user.getPassword(), resultUser.getPassword());
+        
+        
+        //Test update
+        user.setFirstName("Andrew");
+        user.setLastName("Smith");
+        user.setPassword("asd");
+        
+        boolean updateResult = DBUtil.updateUser(user);
+        assertEquals(expectedResult, updateResult);
+        
+        
+        //Check updated users attributes
+        resultUser = DBUtil.getUser(user.getUsername());
+
+        assertEquals(user.getUsername(), resultUser.getUsername());
+        assertEquals(user.getFirstName(), resultUser.getFirstName());
+        assertEquals(user.getLastName(), resultUser.getLastName());
+        assertEquals(user.getPassword(), resultUser.getPassword());
+        
+        
+        //Test delete 
+        boolean deleteResult = DBUtil.deleteUser(user.getUsername());
+        assertEquals(expectedResult, deleteResult);
+        resultUser = DBUtil.getUser(user.getUsername());
+        assertEquals(null, resultUser);
+    }
 }
