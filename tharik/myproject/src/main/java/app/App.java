@@ -16,12 +16,19 @@ import db.OracleUtil;
 public class App {
      public static void main(String[] args) {
          
+         String [] names = new String[2];
+         names[0]= "John";
          
-         DBUtil utl = new OracleUtil();
+         if (!names[1].isEmpty()) {
+             System.out.print(names[1]);
+         }
          
-         Process p1 = new Process();
-         p1.process(utl);
          
+//         DBUtil utl = new OracleUtil();
+//         
+//         Process p1 = new Process();
+//         p1.process(utl);
+//         
          
      }
 }
